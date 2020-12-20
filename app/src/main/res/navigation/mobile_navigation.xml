@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_dashboard">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.belajarkodecoding.aplikasicoffee.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_dashboard"
+        android:name="com.belajarkodecoding.aplikasicoffee.ui.dashboard.DashboardFragment"
+        android:label="@string/menu_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.belajarkodecoding.aplikasicoffee.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_history"
+        android:name="com.belajarkodecoding.aplikasicoffee.ui.history.HistoryFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/fragment_history" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.belajarkodecoding.aplikasicoffee.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_call_seller"
+        android:name="com.belajarkodecoding.aplikasicoffee.ui.call_seller.CallsellerFragment"
+        android:label="@string/menu_call_seller"
+        tools:layout="@layout/fragment_call_seller" />
 </navigation>
