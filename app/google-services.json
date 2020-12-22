@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "533954141855",
+    "project_id": "aplikasi-kopi-83eb3",
+    "storage_bucket": "aplikasi-kopi-83eb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533954141855:android:3ff60a072f1d5b4a38ccaa",
+        "android_client_info": {
+          "package_name": "com.belajarkodecoding.aplikasicoffee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533954141855-hf894klevg954jbdlqsjkghgc9hua3ul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCimpcWLRhr_krUgzULMIyOLQrt2lBG-kM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533954141855-hf894klevg954jbdlqsjkghgc9hua3ul.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
