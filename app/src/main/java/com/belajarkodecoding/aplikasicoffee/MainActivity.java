@@ -20,4 +20,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),LoginActivity.class));
         finish();
     }
+    @Override
+    public void onBackPressed() {
+
+    }
 }

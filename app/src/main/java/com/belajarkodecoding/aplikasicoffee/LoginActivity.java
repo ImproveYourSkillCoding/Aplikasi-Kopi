@@ -66,6 +66,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(LoginActivity.this, "Authentication success.", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                finish();
 
 
                             } else {
@@ -82,4 +83,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
     }
+
 }

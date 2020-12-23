@@ -70,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(RegisterActivity.this, "User Created success.", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                finish();
 
                             } else {
                                 // If sign in fails, display a message to the user.
@@ -81,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onBackPressed() {
-        Intent goLogin = new Intent(RegisterActivity.this, LoginActivity.class);
+        Intent goLogin = new Intent(RegisterActivity.this, SelamatDatangActivity.class);
         startActivity(goLogin);
         finish();
     }

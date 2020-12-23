@@ -44,7 +44,7 @@
         android:text="Di Darkst kamu akan menemukan kopi dengan kualitas mumpuni langsung dari para petani di Sumatra"
         android:fontFamily="@font/coffee_latte"
         android:textAlignment="center"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome1" />
