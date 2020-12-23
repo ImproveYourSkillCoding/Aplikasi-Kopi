@@ -9,39 +9,58 @@
 
     <RelativeLayout
         android:id="@+id/rl_input"
-        android:layout_marginRight="70dp"
-        android:background="@drawable/sp_rectangle_root"
+        android:layout_width="wrap_content"
+        android:layout_height="184dp"
         android:layout_centerVertical="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_marginRight="70dp"
+        android:background="@drawable/sp_rectangle_root">
 
         <EditText
-            android:paddingLeft="20dp"
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#FFF"
             android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="20dp"
-            android:id="@+id/et_username"
             android:hint="Email"
-            android:backgroundTint="#FFF"
-            android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:paddingLeft="20dp" />
 
         <View
             android:id="@+id/v_saparator"
-            android:background="#E8E9E8"
-            android:layout_below="@id/et_username"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"/>
+            android:layout_height="0.5dp"
+            android:layout_below="@id/et_username"
+            android:background="#E8E9E8" />
 
         <EditText
             android:id="@+id/et_password"
-            android:paddingLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/v_saparator"
+            android:backgroundTint="#FFF"
             android:drawableLeft="@drawable/ic_lock"
             android:drawablePadding="20dp"
-            android:backgroundTint="#FFF"
-            android:layout_below="@id/v_saparator"
             android:hint="********"
+            android:paddingLeft="20dp" />
+
+        <View
+            android:id="@+id/v_saparator1"
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="0.5dp"
+            android:layout_below="@id/et_password"
+            android:background="#E8E9E8" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/v_saparator1"
+            android:backgroundTint="#FFF"
+            android:drawableLeft="@drawable/ic_call"
+            android:drawablePadding="20dp"
+            android:hint="+62xxxxxxxxxxx"
+            android:paddingLeft="20dp" />
+
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

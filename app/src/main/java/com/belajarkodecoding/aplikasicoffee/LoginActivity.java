@@ -1,14 +1,14 @@
 package com.belajarkodecoding.aplikasicoffee;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -35,6 +35,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
         fabLogin = findViewById(R.id.fab_login);
+
         fabLogin.setOnClickListener(this);
     }
 
@@ -44,42 +45,41 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String username = etUsername.getText().toString();
         String password = etPassword.getText().toString();
 
-        if (username.equals("")) {
-            Toast.makeText(LoginActivity.this, "Silahkan input username", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(username)) {
+            etUsername.setError("Email is Required");
+            return;
+        }
+        if (TextUtils.isEmpty(password)) {
+            etPassword.setError("Password is Required");
+            return;
+        }
+        if (password.length() < 6) {
+            etPassword.setError("Password Must Be >= 6 Characters");
+            return;
+        }
 
-        } else if (password.equals("")) {
-            Toast.makeText(LoginActivity.this, "Silahkan input password", Toast.LENGTH_SHORT).show();
-
-        } else {
-
-            mAuth.signInWithEmailAndPassword(username, password)
-                    .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information\
                                 FirebaseUser user = mAuth.getCurrentUser();
-
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                startActivity(intent);
-                                finish();
+                                Toast.makeText(LoginActivity.this, "Authentication success.", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
 
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Authentication failed."+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
 
         }
-    }
 
     @Override
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
     }
-
 }

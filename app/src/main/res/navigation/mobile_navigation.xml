@@ -5,21 +5,4 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_dashboard">
 
-    <fragment
-        android:id="@+id/nav_dashboard"
-        android:name="com.belajarkodecoding.aplikasicoffee.ui.dashboard.DashboardFragment"
-        android:label="@string/menu_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/nav_history"
-        android:name="com.belajarkodecoding.aplikasicoffee.ui.history.HistoryFragment"
-        android:label="@string/menu_history"
-        tools:layout="@layout/fragment_history" />
-
-    <fragment
-        android:id="@+id/nav_call_seller"
-        android:name="com.belajarkodecoding.aplikasicoffee.ui.call_seller.CallsellerFragment"
-        android:label="@string/menu_call_seller"
-        tools:layout="@layout/fragment_call_seller" />
 </navigation>
