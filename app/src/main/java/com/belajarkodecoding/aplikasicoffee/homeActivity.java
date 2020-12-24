@@ -1,14 +1,38 @@
 package com.belajarkodecoding.aplikasicoffee;
 
+
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
-public class homeActivity extends AppCompatActivity {
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class homeActivity extends Fragment {
+
+
+    public homeActivity() {
+        // Required empty public constructor
+    }
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.activity_home, container, false);
+    }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        getActivity().setTitle("Home");
     }
 }
