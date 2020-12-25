@@ -1,38 +1,78 @@
 package com.belajarkodecoding.aplikasicoffee;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class profilActivity extends Fragment {
+public class profilActivity extends Fragment implements View.OnClickListener {
 
 
     public profilActivity() {
         // Required empty public constructor
     }
 
+    FirebaseAuth mAuth;
+    FirebaseUser user;
+    TextView txt;
+    Button btn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_riwayat, container, false);
+        View view = inflater.inflate(R.layout.activity_profil, container, false);
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        txt = (TextView) view.findViewById(R.id.namaProfil);
+        txt.setText(user.getEmail());
+        btn = (Button)view.findViewById(R.id.btn_logout);
+        btn.setOnClickListener(this);
+        return view;
+
+
     }
+
+
+    /**    FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(), SelamatDatangActivity.class));
+        getActivity().finish();
+    **/
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle("Riwayat");
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn_logout:
+                Intent intent = new Intent(v.getContext(), SelamatDatangActivity.class);
+                FirebaseAuth.getInstance().signOut();
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                getActivity().finish();
+        }
     }
 }

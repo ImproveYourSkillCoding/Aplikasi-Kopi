@@ -1,18 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiasi">
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/button_biasa"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/imageProfil"/>
     <TextView
-        android:id="@+id/text_kontak"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="PROFIL"
-        android:textSize="100sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="293dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@id/imageProfil"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/coffee_latte"
+        android:textSize="30sp"
+        android:id="@+id/namaProfil"/>
+
+    <Button
+        android:layout_width="115dp"
+        android:layout_height="54dp"
+        android:layout_below="@id/namaProfil"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Edit Profil"
+        android:fontFamily="@font/coffee_latte"
+        android:background="@drawable/button_biasa"
+        android:id="@+id/btn_edit"/>
+
+    <Button
+        android:layout_width="115dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Logout"
+        android:id="@+id/btn_logout"
+        android:fontFamily="@font/coffee_latte"
+        android:background="@drawable/button_biasa"
+        android:layout_toRightOf="@id/btn_edit"
+        android:layout_below="@id/namaProfil"/>
+
+
+        
+
+
+        
+</RelativeLayout>

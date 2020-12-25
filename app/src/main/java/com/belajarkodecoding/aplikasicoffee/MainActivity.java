@@ -12,11 +12,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     private void firstFragmentDisplay(int itemId) {
 
-        fragment = null;
+        fragment = new homeActivity();
 
         switch (itemId) {
             case R.id.homepage:
@@ -89,8 +88,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     @Override
     public void onBackPressed() {
-        if (mDrawer.isDrawerOpen(GravityCompat.START)) {
-            mDrawer.closeDrawers();
+        if (fragment != new homeActivity()) {
+            nvDrawer.setSelectedItemId(R.id.homepage);
         } else {
             super.onBackPressed();
         }
