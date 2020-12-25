@@ -15,13 +15,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
-    private NavigationView nvDrawer;
+    private BottomNavigationView nvDrawer;
     private Fragment fragment;
     private FragmentTransaction transaction;
     
@@ -35,17 +36,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        nvDrawer = findViewById(R.id.nvView);
-        mDrawer = findViewById(R.id.drawer_layout);
+        nvDrawer = findViewById(R.id.bot_nvView);
 
-        drawerToggle = new ActionBarDrawerToggle(
-                this, mDrawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerToggle.syncState();
-
-        nvDrawer.setNavigationItemSelectedListener(this);
+        nvDrawer.setOnNavigationItemSelectedListener(this);
 
         nvDrawer.getMenu().getItem(0).setChecked(true);
-        firstFragmentDisplay(R.id.nvView);
+        firstFragmentDisplay(R.id.bot_nvView);
 
 
     }
@@ -70,9 +66,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.kontak_penjual:
                 fragment = new kontakActivity();
                 break;
-            case R.id.logout:
-                logout();
+            case R.id.profil:
+                fragment =  new profilActivity();
                 break;
+
+
 
         }
 
@@ -84,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
 
-        mDrawer.closeDrawers();
 
     }
 
@@ -98,11 +95,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
-    public void logout() {
+    /**public void logout() {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(), SelamatDatangActivity.class));
         finish();
 
-    }
+    }**/
    
 }

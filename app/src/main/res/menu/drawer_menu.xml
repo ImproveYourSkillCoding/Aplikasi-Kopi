@@ -17,8 +17,8 @@
             android:icon="@drawable/ic_call"
             android:title="Hubungi Penjual"/>
         <item
-            android:id="@+id/logout"
+            android:id="@+id/profil"
             android:icon="@drawable/ic_account_box"
-            android:title="Logout"/>
+            android:title="Profil"/>
     </group>
 </menu>
