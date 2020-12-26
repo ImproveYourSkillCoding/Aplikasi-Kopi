@@ -56,14 +56,14 @@
 
         <EditText
             android:id="@+id/et_phone"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_width="219dp"
+            android:layout_height="63dp"
             android:layout_below="@id/v_saparator1"
             android:backgroundTint="#FFF"
             android:drawableLeft="@drawable/ic_call"
             android:drawablePadding="20dp"
-            android:inputType="phone"
             android:hint="+62xxxxxxxxxxx"
+            android:inputType="phone"
             android:paddingLeft="20dp" />
 
     </RelativeLayout>

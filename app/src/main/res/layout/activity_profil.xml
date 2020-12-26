@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradiasi">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:background="@drawable/button_biasa"
+        android:background="@drawable/ic_account_circle"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:id="@+id/imageProfil"/>
@@ -21,18 +21,59 @@
         android:layout_marginLeft="20dp"
         android:fontFamily="@font/coffee_latte"
         android:textSize="30sp"
+        android:id="@+id/emailProfil"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailProfil"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:hint="Nama Anda"
+        android:fontFamily="@font/coffee_latte"
+        android:textSize="30sp"
         android:id="@+id/namaProfil"/>
-
-    <Button
-        android:layout_width="115dp"
-        android:layout_height="54dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/namaProfil"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:text="Edit Profil"
+        android:layout_marginLeft="20dp"
+        android:hint="Nomor Anda"
         android:fontFamily="@font/coffee_latte"
+        android:textSize="30sp"
+        android:id="@+id/nomorProfil"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nomorProfil"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:hint="Alamat Anda"
+        android:fontFamily="@font/coffee_latte"
+        android:textSize="30sp"
+        android:id="@+id/alamatProfil"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alamatProfil"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:text="Silahkan tekan tombol edit untuk melengkapi data anda"
+        android:fontFamily="@font/coffee_latte"
+        android:textSize="18sp"
+        android:id="@+id/editProfil"/>
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="115dp"
+        android:layout_height="54dp"
+        android:layout_below="@id/editProfil"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/button_biasa"
-        android:id="@+id/btn_edit"/>
+        android:fontFamily="@font/coffee_latte"
+        android:text="Edit Profil" />
 
     <Button
         android:layout_width="115dp"
@@ -44,7 +85,7 @@
         android:fontFamily="@font/coffee_latte"
         android:background="@drawable/button_biasa"
         android:layout_toRightOf="@id/btn_edit"
-        android:layout_below="@id/namaProfil"/>
+        android:layout_below="@id/editProfil"/>
 
 
         

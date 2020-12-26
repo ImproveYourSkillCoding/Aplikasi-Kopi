@@ -2,6 +2,7 @@ package com.belajarkodecoding.aplikasicoffee;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
@@ -30,9 +32,7 @@ public class profilActivity extends Fragment implements View.OnClickListener {
         // Required empty public constructor
     }
 
-    FirebaseAuth mAuth;
-    FirebaseUser user;
-    TextView txt;
+    TextView mtxt;
     Button btn;
 
     @Override
@@ -40,10 +40,9 @@ public class profilActivity extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activity_profil, container, false);
-        mAuth = FirebaseAuth.getInstance();
-        user = mAuth.getCurrentUser();
-        txt = (TextView) view.findViewById(R.id.namaProfil);
-        txt.setText(user.getEmail());
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        mtxt = (TextView) view.findViewById(R.id.emailProfil);
+        mtxt.setText(user.getEmail());
         btn = (Button)view.findViewById(R.id.btn_logout);
         btn.setOnClickListener(this);
         return view;
