@@ -32,6 +32,8 @@ public class profilActivity extends Fragment implements View.OnClickListener {
         // Required empty public constructor
     }
 
+    private FirebaseAuth mauth;
+    private FirebaseAuth.AuthStateListener authStateListener;
     TextView mtxt;
     Button btn;
 
@@ -46,8 +48,6 @@ public class profilActivity extends Fragment implements View.OnClickListener {
         btn = (Button)view.findViewById(R.id.btn_logout);
         btn.setOnClickListener(this);
         return view;
-
-
     }
 
 

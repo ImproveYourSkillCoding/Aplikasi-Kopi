@@ -21,7 +21,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
-
     private EditText etUsername, etPassword;
     FloatingActionButton fabLogin;
 
@@ -31,7 +30,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
         fabLogin = findViewById(R.id.fab_login);
@@ -83,5 +81,4 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
     }
-
 }
