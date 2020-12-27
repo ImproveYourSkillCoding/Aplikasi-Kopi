@@ -1,6 +1,8 @@
 package com.belajarkodecoding.aplikasicoffee;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,13 +12,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class kontakActivity extends Fragment {
-
+public class kontakActivity extends Fragment implements View.OnClickListener {
 
     public kontakActivity() {
         // Required empty public constructor
@@ -27,7 +30,10 @@ public class kontakActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_kontak, container, false);
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.activity_kontak, container, false);
+        TextView nSeller = (TextView) root.findViewById(R.id.seller_number);
+        nSeller.setOnClickListener(this);
+        return root;
     }
 
     @Override
@@ -35,4 +41,16 @@ public class kontakActivity extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Hubungi Penjual");
     }
+
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.seller_number:
+                String seller_number = "+6281280468902";
+                Intent dial_seller = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + seller_number));
+                startActivity(dial_seller);
+                break;
+        }
+    }
+
 }

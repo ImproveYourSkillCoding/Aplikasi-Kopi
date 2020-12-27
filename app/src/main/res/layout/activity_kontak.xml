@@ -1,18 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiasi">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/ic_account_circle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/imageSeller"/>
 
     <TextView
-        android:id="@+id/text_kontak"
+        android:id="@+id/seller_nama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="KONTAK"
-        android:textSize="100sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="293dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@id/imageSeller"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:text="Nama Penjual"
+        android:fontFamily="@font/coffee_latte"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/seller_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seller_nama"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:text="+6281280468902"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:backgroundTintMode="screen"
+        android:fontFamily="@font/coffee_latte"
+        android:textSize="18sp"/>
+
+</RelativeLayout>
