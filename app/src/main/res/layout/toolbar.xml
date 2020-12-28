@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:fitsSystemWindows="true"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         tools:ignore="MissingConstraints">
     </androidx.appcompat.widget.Toolbar>
 </androidx.constraintlayout.widget.ConstraintLayout>

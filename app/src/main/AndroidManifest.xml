@@ -44,6 +44,7 @@
         </activity>
 
         <activity android:name=".MainActivity" />
+        <activity android:name=".editProfilActivity" />
     </application>
 
 </manifest>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiasi">
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_arrow_forward_black_24dp"
+        android:scaleType="fitStart"
+        android:scaleX="-1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/transparan"
+        android:id="@+id/back_editprofil"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/coffee_latte"
+        android:text="Edit Profil"
+        android:textSize="30sp"
+        android:layout_toRightOf="@id/back_editprofil"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/txt_view_profil"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_below="@id/back_editprofil"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_account_circle"
+        android:id="@+id/edit_imageprofil"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_input_edit"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_imageprofil"
+        android:layout_marginRight="70dp"
+        android:background="@drawable/sp_rectangle_root">
+
+        <EditText
+            android:id="@+id/et_nama_edit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:fontFamily="@font/coffee_latte"
+            android:backgroundTint="#FFF"
+            android:drawableLeft="@drawable/ic_person"
+            android:drawablePadding="20dp"
+            android:inputType="text"
+            android:hint="Nama"
+            android:paddingLeft="20dp" />
+
+        <View
+            android:id="@+id/v_saparator"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/et_nama_edit"
+            android:background="@color/coklat" />
+
+        <EditText
+            android:id="@+id/et_alamat_edit"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/coffee_latte"
+            android:layout_height="100dp"
+            android:layout_below="@id/v_saparator"
+            android:backgroundTint="#FFF"
+            android:drawableLeft="@drawable/ic_home"
+            android:drawablePadding="20dp"
+            android:hint="Alamat"
+            android:inputType="text"
+            android:paddingLeft="20dp" />
+
+        <View
+            android:id="@+id/v_saparator1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/et_alamat_edit"
+            android:background="@color/coklat" />
+
+        <EditText
+            android:id="@+id/et_phone_edit"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_below="@id/v_saparator1"
+            android:backgroundTint="#FFF"
+            android:drawableLeft="@drawable/ic_call"
+            android:drawablePadding="20dp"
+            android:hint="+62xxxxxxxxxxx"
+            android:inputType="phone"
+            android:paddingLeft="20dp" />
+
+
+
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="115dp"
+        android:layout_height="54dp"
+        android:background="@drawable/button_biasa"
+        android:text="Simpan"
+        android:fontFamily="@font/coffee_latte"
+        android:textColor="@color/putih"
+        android:layout_below="@id/rl_input_edit"
+        android:layout_marginTop="35dp"
+        android:id="@+id/btn_simpan_edit"
+        android:layout_centerHorizontal="true"/>
+
+
+
+
+</RelativeLayout>

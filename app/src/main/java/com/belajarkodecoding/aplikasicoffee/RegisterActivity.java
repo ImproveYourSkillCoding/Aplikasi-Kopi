@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
-    private EditText etUsername, etPassword, etphone;
+    private EditText etEmail, etUsername, etPassword, etphone;
     FloatingActionButton fabRegister;
 
     @Override
@@ -30,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         mAuth = FirebaseAuth.getInstance();
 
+        etEmail = findViewById(R.id.et_email);
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
         etphone = findViewById(R.id.et_phone);

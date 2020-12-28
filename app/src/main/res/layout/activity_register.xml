@@ -16,7 +16,7 @@
         android:background="@drawable/sp_rectangle_root">
 
         <EditText
-            android:id="@+id/et_username"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:fontFamily="@font/coffee_latte"
@@ -31,7 +31,7 @@
             android:id="@+id/v_saparator"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:layout_below="@id/et_username"
+            android:layout_below="@id/et_email"
             android:background="#E8E9E8" />
 
         <EditText
