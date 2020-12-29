@@ -53,7 +53,7 @@ public class editProfilActivity extends AppCompatActivity implements View.OnClic
 
                 getReference = database.getReference();
 
-                if(nama == null && alamat  == null && etPhone == null){
+                if(nama == null && alamat  == null && phone == null){
                     Toast.makeText(editProfilActivity.this, "Data tidak boleh kosong",Toast.LENGTH_SHORT).show();
                 } else {
                     getReference.child("user").child(user.getUid()).child("profil").push()
