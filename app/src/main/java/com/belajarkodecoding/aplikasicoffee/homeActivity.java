@@ -12,22 +12,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
+import com.belajarkodecoding.aplikasicoffee.Item;
+import com.belajarkodecoding.aplikasicoffee.ItemViewHolder;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class homeActivity extends Fragment {
 
     RecyclerView recview;
-    AdapterItem adapterItem;
+
     public homeActivity() {
         // Required empty public constructor
     }
 
+    FirebaseRecyclerAdapter<Item, ItemViewHolder> recyclerAdapter;
+    RecyclerView.LayoutManager layoutManager;
+    FirebaseDatabase database;
+    DatabaseReference databaseReference;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,31 +41,10 @@ public class homeActivity extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.activity_home, container, false);
 
-        recview=(RecyclerView)view.findViewById(R.id.imageRecyclerView);
-        recview.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        FirebaseRecyclerOptions<Item> options =
-                new FirebaseRecyclerOptions.Builder<Item>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Kopi"), Item.class)
-                        .build();
-
-        adapterItem = new AdapterItem(options);
-        recview.setAdapter(adapterItem);
-
-        return view;
+       return view;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        adapterItem.startListening();
-    }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        adapterItem.stopListening();
-    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
