@@ -46,11 +46,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        String username = etUsername.getText().toString();
+        String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
+        String numphone = etphone.getText().toString();
 
 
-        if (TextUtils.isEmpty(username)) {
+        if (TextUtils.isEmpty(email)) {
             etUsername.setError("Email is Required");
             return;
         }
@@ -64,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
 
 
-            mAuth.createUserWithEmailAndPassword(username, password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {

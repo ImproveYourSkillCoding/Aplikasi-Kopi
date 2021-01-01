@@ -13,7 +13,7 @@
     card_view:cardCornerRadius="4dp">
 
     <RelativeLayout
-        android:layout_width="180dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp">
 
@@ -21,25 +21,30 @@
             android:cropToPadding="false"
             android:adjustViewBounds="true"
             android:id="@+id/img_item_photo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="225px"
+            android:layout_height="225px"
             tools:src="@color/colorAccent" />
 
         <TextView
             android:id="@+id/tv_judul"
+            android:layout_toRightOf="@id/img_item_photo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/img_item_photo"
             android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginBottom="8dp"
             android:textSize="16sp"
+            android:text="Ini adalah Text Nama"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_harga"
             android:textStyle="bold"
+            android:text="Ini adalah text Harga"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/img_item_photo"
             android:layout_below="@id/tv_judul" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

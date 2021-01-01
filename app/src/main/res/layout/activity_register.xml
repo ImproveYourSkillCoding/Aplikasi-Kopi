@@ -63,7 +63,6 @@
             android:drawableLeft="@drawable/ic_call"
             android:drawablePadding="20dp"
             android:hint="+62xxxxxxxxxxx"
-            android:inputType="phone"
             android:paddingLeft="20dp" />
 
     </RelativeLayout>

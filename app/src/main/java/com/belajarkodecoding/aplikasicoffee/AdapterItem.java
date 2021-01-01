@@ -23,16 +23,16 @@ public class AdapterItem extends FirebaseRecyclerAdapter<Item,AdapterItem.viewho
 
     @Override
     protected void onBindViewHolder(@NonNull viewholder holder, int position, @NonNull final Item model) {
-        holder.judul.setText(model.getJudul());
+        holder.nama.setText(model.getNama());
         holder.harga.setText(model.getHarga());
-        Glide.with(holder.item_photo.getContext()).load(model.getPurl()).into(holder.item_photo);
+        GlideApp.with(holder.item_photo.getContext()).load(model.getUrl()).into(holder.item_photo);
 
                 holder.item_photo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         AppCompatActivity activity=(AppCompatActivity)view.getContext();
                         activity.getSupportFragmentManager().beginTransaction().replace(R.id.home,
-                                new DetailItem(model.getJudul(),model.getHarga(),model.getPurl())).addToBackStack(null).commit();
+                                new DetailItem(model.getNama(),model.getHarga(),model.getUrl())).addToBackStack(null).commit();
                     }
                 });
     }
@@ -47,13 +47,13 @@ public class AdapterItem extends FirebaseRecyclerAdapter<Item,AdapterItem.viewho
     public class viewholder extends RecyclerView.ViewHolder{
 
         ImageView item_photo;
-        TextView judul, harga;
+        TextView nama, harga;
 
         public viewholder(@NonNull View itemView) {
             super(itemView);
 
             item_photo=itemView.findViewById(R.id.img_item_photo);
-            judul=itemView.findViewById(R.id.tv_judul);
+            nama=itemView.findViewById(R.id.tv_judul);
             harga=itemView.findViewById(R.id.tv_harga);
 
         }

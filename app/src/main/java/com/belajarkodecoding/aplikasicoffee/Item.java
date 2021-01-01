@@ -1,15 +1,15 @@
 package com.belajarkodecoding.aplikasicoffee;
 
 public class Item {
-    String harga, judul, purl;
+    String harga, nama, url;
 
     public Item() {
     }
 
-    public Item(String harga, String judul, String purl) {
+    public Item(String harga, String nama, String url) {
         this.harga = harga;
-        this.judul = judul;
-        this.purl = purl;
+        this.nama = nama;
+        this.url = url;
     }
 
     public String getHarga() {
@@ -20,19 +20,19 @@ public class Item {
         this.harga = harga;
     }
 
-    public String getJudul() {
-        return judul;
+    public String getNama() {
+        return nama;
     }
 
-    public void setJudul(String judul) {
-        this.judul = judul;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
-    public String getPurl() {
-        return purl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setPurl(String purl) {
-        this.purl = purl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

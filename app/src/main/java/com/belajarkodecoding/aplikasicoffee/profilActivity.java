@@ -72,6 +72,7 @@ public class profilActivity extends Fragment implements View.OnClickListener {
                 user user = snapshot.getValue(user.class);
                 textName.setText(user.getNama());
                 textAlamat.setText(user.getAlamat());
+                textPhone.setText(user.getNo_telp());
 
             }
 
@@ -97,7 +98,7 @@ public class profilActivity extends Fragment implements View.OnClickListener {
         });
 
         textEmail.setText(user.getEmail());
-        textPhone.setText(user.getPhoneNumber());
+
 
 
         btn1 = (Button)view.findViewById(R.id.btn_logout);
