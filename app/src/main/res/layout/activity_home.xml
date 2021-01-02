@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/home">
+    android:id="@+id/home"
+    android:orientation="vertical">
 
     <!-- navigasi bar -->
     <androidx.appcompat.widget.Toolbar
@@ -37,7 +38,6 @@
                 android:drawableStart="@drawable/ic_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-
         </LinearLayout>
 
 
@@ -48,7 +48,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/imageRecyclerView"
                 android:layout_width="match_parent"

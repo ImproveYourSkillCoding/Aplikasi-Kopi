@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -24,7 +25,7 @@ import com.belajarkodecoding.aplikasicoffee.ItemViewHolder;
 
 public class homeActivity extends Fragment {
 
-    RecyclerView recview;
+    RecyclerView recyclerView;
 
     public homeActivity() {
         // Required empty public constructor
@@ -41,10 +42,50 @@ public class homeActivity extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.activity_home, container, false);
 
-       return view;
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("Kopi");
+
+        recyclerView = (RecyclerView).findViewById(R.id.imageRecyclerView);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        loadData();
+
+        return view;
     }
 
+    private void loadData()
+    {
+        FirebaseRecyclerOptions options =
+                new FirebaseRecyclerOptions.Builder<Item>()
+                        .setQuery(databaseReference,Item.class)
+                        .build();
 
+        recyclerAdapter = new FirebaseRecyclerAdapter<Item, ItemViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull ItemViewHolder holder, int position, @NonNull Item model) {
+
+                holder.txtNamaProduk.setText(model.getNama());
+                holder.txtHargaProduk.setText(model.getHarga());
+                GlideApp.with(getContext())
+                        .load(model.getUrl())
+                        .into(holder.imgProduk);
+
+            }
+
+            @NonNull
+            @Override
+            public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+                View view = LayoutInflater.from(viewGroup.getContext())
+                        .inflate(R.layout.list_kopi,viewGroup,false);
+                return new ItemViewHolder(view);
+            }
+        };
+        recyclerAdapter.notifyDataSetChanged();
+        recyclerAdapter.startListening();
+        recyclerView.setAdapter(recyclerAdapter);
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
