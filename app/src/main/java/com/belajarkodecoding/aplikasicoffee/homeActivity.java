@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -45,7 +43,7 @@ public class homeActivity extends Fragment {
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Kopi");
 
-        recyclerView = (RecyclerView).findViewById(R.id.imageRecyclerView);
+        recyclerView =  view.findViewById(R.id.imageRecyclerView);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -68,7 +66,7 @@ public class homeActivity extends Fragment {
 
                 holder.txtNamaProduk.setText(model.getNama());
                 holder.txtHargaProduk.setText(model.getHarga());
-                GlideApp.with(getContext())
+                Glide.with(getContext())
                         .load(model.getUrl())
                         .into(holder.imgProduk);
 

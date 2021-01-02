@@ -39,23 +39,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-
-
     </androidx.appcompat.widget.Toolbar>
+    <!-- recycle view -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/imageRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#FFFFFF"
-                android:scrollbars="vertical"/>
+                android:scrollbars="vertical" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
