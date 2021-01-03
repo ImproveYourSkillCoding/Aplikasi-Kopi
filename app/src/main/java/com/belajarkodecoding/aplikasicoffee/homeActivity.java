@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -70,7 +71,7 @@ public class homeActivity extends Fragment {
                         .load(model.getUrl())
                         .into(holder.imgProduk);
 
-                holder.imgProduk.setOnClickListener(new View.OnClickListener() {
+                holder.cardView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         AppCompatActivity activity = (AppCompatActivity)v.getContext();
