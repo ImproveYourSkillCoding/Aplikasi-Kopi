@@ -13,21 +13,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
+import com.belajarkodecoding.aplikasicoffee.Item;
+import com.belajarkodecoding.aplikasicoffee.ItemViewHolder;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class homeActivity extends Fragment {
 
-    RecyclerView recview;
-    AdapterItem adapterItem;
+    RecyclerView recyclerView;
+
     public homeActivity() {
         // Required empty public constructor
     }
 
+    FirebaseRecyclerAdapter<Item, ItemViewHolder> recyclerAdapter;
+    RecyclerView.LayoutManager layoutManager;
+    FirebaseDatabase database;
+    DatabaseReference databaseReference;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,30 +40,49 @@ public class homeActivity extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.activity_home, container, false);
 
-        recview=(RecyclerView)view.findViewById(R.id.imageRecyclerView);
-        recview.setLayoutManager(new LinearLayoutManager(getContext()));
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("Kopi");
 
-        FirebaseRecyclerOptions<Item> options =
-                new FirebaseRecyclerOptions.Builder<Item>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Kopi"), Item.class)
-                        .build();
+        recyclerView =  view.findViewById(R.id.imageRecyclerView);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
 
-        adapterItem = new AdapterItem(options);
-        recview.setAdapter(adapterItem);
+        loadData();
 
         return view;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        adapterItem.startListening();
-    }
+    private void loadData()
+    {
+        FirebaseRecyclerOptions options =
+                new FirebaseRecyclerOptions.Builder<Item>()
+                        .setQuery(databaseReference,Item.class)
+                        .build();
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        adapterItem.stopListening();
+        recyclerAdapter = new FirebaseRecyclerAdapter<Item, ItemViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull ItemViewHolder holder, int position, @NonNull Item model) {
+
+                holder.txtNamaProduk.setText(model.getNama());
+                holder.txtHargaProduk.setText(model.getHarga());
+                Glide.with(getContext())
+                        .load(model.getUrl())
+                        .into(holder.imgProduk);
+
+            }
+
+            @NonNull
+            @Override
+            public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+                View view = LayoutInflater.from(viewGroup.getContext())
+                        .inflate(R.layout.list_kopi,viewGroup,false);
+                return new ItemViewHolder(view);
+            }
+        };
+        recyclerAdapter.notifyDataSetChanged();
+        recyclerAdapter.startListening();
+        recyclerView.setAdapter(recyclerAdapter);
     }
 
     @Override
