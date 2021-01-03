@@ -1,5 +1,6 @@
 package com.belajarkodecoding.aplikasicoffee;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ public class DetailItem extends Fragment {
     private String mParam1;
     private String mParam2;
     String nama, harga, url;
+    Button button;
 
     public DetailItem() {
 
