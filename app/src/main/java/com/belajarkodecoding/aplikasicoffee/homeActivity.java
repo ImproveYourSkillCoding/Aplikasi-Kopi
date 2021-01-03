@@ -44,7 +44,6 @@ public class homeActivity extends Fragment {
         databaseReference = database.getReference("Kopi");
 
         recyclerView =  view.findViewById(R.id.imageRecyclerView);
-        recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
