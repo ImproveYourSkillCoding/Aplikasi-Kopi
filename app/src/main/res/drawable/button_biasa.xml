@@ -8,5 +8,5 @@
     <solid
         android:color="@color/transparan"/>
     <corners
-        android:radius="50dp"/>
+        android:radius="30dp"/>
 </shape>

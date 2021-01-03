@@ -23,6 +23,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.belajarkodecoding.aplikasicoffee.Item;
 import com.belajarkodecoding.aplikasicoffee.ItemViewHolder;
 
+import java.net.HttpURLConnection;
+
 public class homeActivity extends Fragment {
 
     RecyclerView recyclerView;
@@ -46,7 +48,7 @@ public class homeActivity extends Fragment {
         databaseReference = database.getReference("Kopi");
 
         recyclerView =  view.findViewById(R.id.imageRecyclerView);
-        layoutManager = new LinearLayoutManager(getContext());
+        layoutManager = new GridLayoutManager(getContext(),2);
         recyclerView.setLayoutManager(layoutManager);
 
         loadData();
