@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.homepage:
                 fragment = new homeActivity();
                 break;
-            case R.id.keranjang:
-                fragment = new keranjangActivity();
+            case R.id.history:
+                fragment = new riwayatActivity();
                 break;
             case R.id.kontak_penjual:
                 fragment = new kontakActivity();

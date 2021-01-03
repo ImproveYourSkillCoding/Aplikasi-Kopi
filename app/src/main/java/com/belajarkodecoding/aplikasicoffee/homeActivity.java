@@ -1,6 +1,7 @@
 package com.belajarkodecoding.aplikasicoffee;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -28,6 +30,7 @@ import java.net.HttpURLConnection;
 public class homeActivity extends Fragment {
 
     RecyclerView recyclerView;
+    Button button;
 
     public homeActivity() {
         // Required empty public constructor
@@ -52,6 +55,16 @@ public class homeActivity extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         loadData();
+
+        button = (Button) view.findViewById(R.id.keranjang);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), KeranjangActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

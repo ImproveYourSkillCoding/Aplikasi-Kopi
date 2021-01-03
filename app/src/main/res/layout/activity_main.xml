@@ -9,7 +9,7 @@
 
     <FrameLayout
             android:id="@+id/flContent"
-        android:layout_above="@id/bot_nvView"
+            android:layout_above="@id/bot_nvView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
     </FrameLayout>
@@ -21,6 +21,4 @@
         android:background="@color/putih"
         android:layout_alignParentBottom ="true"
         app:menu="@menu/drawer_menu" />
-
-
 </RelativeLayout>
