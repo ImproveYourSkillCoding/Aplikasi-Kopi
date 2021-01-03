@@ -20,16 +20,16 @@ public class DetailItem extends Fragment {
 
     private String mParam1;
     private String mParam2;
-    String judul, harga, purl;
+    String nama, harga, url;
 
     public DetailItem() {
 
     }
 
-    public DetailItem(String judul, String harga, String purl) {
-        this.judul=judul;
+    public DetailItem(String nama, String harga, String url) {
+        this.nama=nama;
         this.harga=harga;
-        this.purl=purl;
+        this.url=url;
 
     }
 
@@ -60,16 +60,16 @@ public class DetailItem extends Fragment {
         TextView judulItem = view.findViewById(R.id.judul);
         TextView hargaItem = view.findViewById(R.id.harga);
 
-        judulItem.setText(judul);
+        judulItem.setText(nama);
         hargaItem.setText(harga);
-        Glide.with(getContext()).load(purl).into(itemphoto);
+        Glide.with(getContext()).load(url).into(itemphoto);
 
         return view;
     }
 
     public void onBackPressed(){
         AppCompatActivity activity=(AppCompatActivity)getContext();
-        activity.getSupportFragmentManager().beginTransaction().replace(R.id.home,
+        activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContent,
                 new homeActivity()).addToBackStack(null).commit();
     }
 }

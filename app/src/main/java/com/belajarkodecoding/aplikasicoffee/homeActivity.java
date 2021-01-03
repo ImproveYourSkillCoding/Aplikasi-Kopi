@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,13 +62,22 @@ public class homeActivity extends Fragment {
 
         recyclerAdapter = new FirebaseRecyclerAdapter<Item, ItemViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull ItemViewHolder holder, int position, @NonNull Item model) {
+            protected void onBindViewHolder(@NonNull ItemViewHolder holder, int position, @NonNull final Item model) {
 
                 holder.txtNamaProduk.setText(model.getNama());
                 holder.txtHargaProduk.setText(model.getHarga());
                 Glide.with(getContext())
                         .load(model.getUrl())
                         .into(holder.imgProduk);
+
+                holder.imgProduk.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AppCompatActivity activity = (AppCompatActivity)v.getContext();
+                        activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContent, new DetailItem(model.getNama(),model.getHarga(),model.getUrl())).addToBackStack(null).commit();
+
+                    }
+                });
 
             }
 
