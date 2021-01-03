@@ -9,8 +9,8 @@
 
     <RelativeLayout
         android:id="@+id/rl_input"
-        android:layout_width="wrap_content"
-        android:layout_height="184dp"
+        android:layout_width="360dp"
+        android:layout_height="123dp"
         android:layout_centerVertical="true"
         android:layout_marginRight="70dp"
         android:background="@drawable/sp_rectangle_root">
@@ -19,12 +19,12 @@
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:fontFamily="@font/coffee_latte"
             android:backgroundTint="#FFF"
             android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="20dp"
-            android:inputType="textEmailAddress"
+            android:fontFamily="@font/coffee_latte"
             android:hint="Email"
+            android:inputType="textEmailAddress"
             android:paddingLeft="20dp" />
 
         <View
@@ -36,13 +36,14 @@
 
         <EditText
             android:id="@+id/et_password"
-            android:layout_width="match_parent"
-            android:fontFamily="@font/coffee_latte"
-            android:layout_height="60dp"
+            android:layout_width="315dp"
+            android:layout_height="63dp"
             android:layout_below="@id/v_saparator"
+            android:layout_marginTop="-1dp"
             android:backgroundTint="#FFF"
             android:drawableLeft="@drawable/ic_lock"
             android:drawablePadding="20dp"
+            android:fontFamily="@font/coffee_latte"
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingLeft="20dp" />
@@ -53,17 +54,6 @@
             android:layout_height="0.5dp"
             android:layout_below="@id/et_password"
             android:background="#E8E9E8" />
-
-        <EditText
-            android:id="@+id/et_phone"
-            android:layout_width="219dp"
-            android:layout_height="63dp"
-            android:layout_below="@id/v_saparator1"
-            android:backgroundTint="#FFF"
-            android:drawableLeft="@drawable/ic_call"
-            android:drawablePadding="20dp"
-            android:hint="+62xxxxxxxxxxx"
-            android:paddingLeft="20dp" />
 
     </RelativeLayout>
 

@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
-    private EditText etEmail, etUsername, etPassword, etphone;
+    private EditText etEmail, etUsername, etPassword;
     FloatingActionButton fabRegister;
 
     @Override
@@ -33,7 +33,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         etEmail = findViewById(R.id.et_email);
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
-        etphone = findViewById(R.id.et_phone);
         fabRegister = findViewById(R.id.fab_register);
 
         if(mAuth.getCurrentUser() != null){
@@ -48,7 +47,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
-        String numphone = etphone.getText().toString();
 
 
         if (TextUtils.isEmpty(email)) {

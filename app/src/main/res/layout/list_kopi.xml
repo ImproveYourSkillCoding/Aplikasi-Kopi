@@ -23,15 +23,16 @@
             android:id="@+id/img_item_photo"
             android:layout_width="225px"
             android:layout_height="225px"
-            android:src="@color/colorAccent"/>
+            tools:src="@color/colorAccent" />
 
         <TextView
             android:id="@+id/tv_judul"
-            android:layout_below="@id/img_item_photo"
+            android:layout_toRightOf="@id/img_item_photo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/coffee_latte"
             android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginBottom="8dp"
             android:textSize="16sp"
             android:text="Ini adalah Text Nama"
@@ -44,7 +45,8 @@
             android:fontFamily="@font/coffee_latte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/img_item_photo"
             android:layout_below="@id/tv_judul" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

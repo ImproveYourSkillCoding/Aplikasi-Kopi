@@ -53,30 +53,36 @@
         android:id="@+id/masuk"
         android:layout_width="120dp"
         android:layout_height="54dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="35dp"
         android:background="@drawable/button_biasa"
         android:backgroundTintMode="screen"
         android:fontFamily="@font/coffee_latte"
         android:text="Masuk"
         android:textAlignment="center"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/daftar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intro" />
+        app:layout_constraintTop_toBottomOf="@+id/intro"
+        app:layout_constraintVertical_bias="0.36" />
 
     <Button
         android:id="@+id/daftar"
         android:layout_width="120dp"
         android:layout_height="54dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="70dp"
-        android:backgroundTintMode="screen"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="72dp"
         android:background="@drawable/button_biasa"
+        android:backgroundTintMode="screen"
+        android:fontFamily="@font/coffee_latte"
         android:text="Daftar"
         android:textAlignment="center"
-        android:fontFamily="@font/coffee_latte"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intro" />
+        app:layout_constraintStart_toEndOf="@+id/masuk"
+        app:layout_constraintTop_toBottomOf="@+id/intro"
+        app:layout_constraintVertical_bias="0.36" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
