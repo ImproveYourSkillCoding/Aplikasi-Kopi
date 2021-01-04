@@ -1,22 +1,23 @@
 package com.belajarkodecoding.aplikasicoffee;
 
 public class Item {
-    String harga, nama, url;
+    String  nama, url;
+    int harga;
 
     public Item() {
     }
 
-    public Item(String harga, String nama, String url) {
+    public Item(int harga, String nama, String url) {
         this.harga = harga;
         this.nama = nama;
         this.url = url;
     }
 
-    public String getHarga() {
+    public int getHarga() {
         return harga;
     }
 
-    public void setHarga(String harga) {
+    public void setHarga(int harga) {
         this.harga = harga;
     }
 

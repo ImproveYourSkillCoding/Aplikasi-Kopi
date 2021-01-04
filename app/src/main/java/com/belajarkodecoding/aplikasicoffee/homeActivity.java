@@ -81,7 +81,7 @@ public class homeActivity extends Fragment {
             protected void onBindViewHolder(@NonNull ItemViewHolder holder, int position, @NonNull final Item model) {
 
                 holder.txtNamaProduk.setText(model.getNama());
-                holder.txtHargaProduk.setText(model.getHarga());
+                holder.txtHargaProduk.setText("Rp."+model.getHarga());
                 Glide.with(getContext())
                         .load(model.getUrl())
                         .into(holder.imgProduk);

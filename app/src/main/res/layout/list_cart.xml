@@ -61,17 +61,7 @@
                     android:textStyle="bold"
                     android:layout_weight="6" />
 
-                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-                    android:id="@+id/txt_jumlah"
-                    android:layout_weight="1"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
-                    card_view:initialNumber="1"
-                    card_view:finalNumber="100"
-                    card_view:backGroundColor="@color/putih"
-                    card_view:textSize="10sp"
-                    card_view:textColor="@color/grey_500">
-                </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

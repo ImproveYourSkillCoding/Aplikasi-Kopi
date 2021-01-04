@@ -24,33 +24,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <RelativeLayout
-                android:layout_width="30dp"
-                android:layout_height="match_parent"/>
 
-            <SearchView
-                android:backgroundTint="@color/putih"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:gravity="left|center_vertical"
-                android:drawableStart="@drawable/ic_search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <RelativeLayout
-                android:layout_width="10dp"
-                android:layout_height="match_parent"/>
 
             <Button
                 android:id="@+id/keranjang"
                 android:layout_width="40dp"
                 android:layout_height="34dp"
-                android:layout_gravity="center_vertical"
+                android:layout_gravity="right"
                 android:background="@drawable/ic_cart"
-                android:padding="10dp"
                 android:onClick="onClick"
                 android:clickable="true"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginLeft="280dp"/>
 
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
