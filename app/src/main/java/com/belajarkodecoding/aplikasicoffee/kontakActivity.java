@@ -46,7 +46,7 @@ public class kontakActivity extends Fragment implements View.OnClickListener {
     public void onClick(View v){
         switch (v.getId()){
             case R.id.seller_number:
-                String seller_number = "+6281280468902";
+                String seller_number = "+6281213139185";
                 Intent dial_seller = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + seller_number));
                 startActivity(dial_seller);
                 break;

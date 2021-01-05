@@ -12,7 +12,7 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     public TextView txtNamaProduk,txtHargaProduk;
     public ImageView imgProduk;
     public CardView cardView;
-    public TextView txtNamaProduk_cart,txtHargaProduk_cart,txtJumlahProduk_cart;
+    public TextView txtNamaProduk_cart,txtHargaProduk_cart, txtJumlahProduk_cart;
     public ImageView imgProduk_cart;
     public CardView cardView_cart;
 

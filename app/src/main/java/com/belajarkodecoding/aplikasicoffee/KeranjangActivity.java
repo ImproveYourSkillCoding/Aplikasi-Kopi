@@ -1,6 +1,7 @@
 package com.belajarkodecoding.aplikasicoffee;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class KeranjangActivity extends AppCompatActivity{
 
-    Button btn_bayar;
+    Button btn_pembayaran;
     TextView txt_total;
     FirebaseRecyclerAdapter<Item_keranjang, ItemViewHolder> recyclerAdapter;
     RecyclerView.LayoutManager layoutManager;
@@ -38,7 +39,7 @@ public class KeranjangActivity extends AppCompatActivity{
         setContentView(R.layout.activity_keranjang);
 
         txt_total = findViewById(R.id.txt_total);
-        btn_bayar = findViewById(R.id.btn_bayar);
+        btn_pembayaran = findViewById(R.id.btn_pembayaran);
         recview = findViewById(R.id.daftar_keranjang);
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -54,6 +55,14 @@ public class KeranjangActivity extends AppCompatActivity{
 
             loadDataKeranjang();
         }
+
+        btn_pembayaran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(KeranjangActivity.this, PayActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -79,7 +88,6 @@ public class KeranjangActivity extends AppCompatActivity{
                     jumlah_harga = model.getJumlah()*model.getHarga();
                     txt_total.setText("Total Yang Harus Dibayar = "+jumlah_harga);
                 }
-
 
             }
 

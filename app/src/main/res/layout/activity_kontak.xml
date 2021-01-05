@@ -21,7 +21,7 @@
         android:layout_below="@id/imageSeller"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp"
-        android:text="Nama Penjual"
+        android:text="Julianda Saputri"
         android:fontFamily="@font/coffee_latte"
         android:textSize="30sp"/>
 
@@ -32,7 +32,7 @@
         android:layout_below="@id/seller_nama"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp"
-        android:text="+6281280468902"
+        android:text="+6281213139185"
         android:clickable="true"
         android:linksClickable="true"
         android:backgroundTintMode="screen"
