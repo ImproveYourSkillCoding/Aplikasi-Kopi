@@ -3,7 +3,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_view"
+    android:id="@+id/card_view2"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/img_item_photo"
+            android:id="@+id/img_item_photo_cart"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:adjustViewBounds="true"
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tv_judul"
+                android:id="@+id/tv_nama_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -51,7 +51,7 @@
                 android:weightSum="7">
 
                 <TextView
-                    android:id="@+id/tv_harga"
+                    android:id="@+id/tv_harga_cart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -59,7 +59,22 @@
                     android:fontFamily="@font/coffee_latte"
                     android:text="Rp. 20.000"
                     android:textStyle="bold"
-                    android:layout_weight="6" />
+                    android:layout_weight="4" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/coffee_latte"
+                    android:layout_marginLeft="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jumlah Item"
+                    android:fontFamily="@font/coffee_latte"
+                    android:id="@+id/jumlah_item"/>
+
+
 
 
             </LinearLayout>
