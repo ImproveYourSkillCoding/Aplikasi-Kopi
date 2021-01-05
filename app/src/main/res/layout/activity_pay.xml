@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiasi"
+    tools:context=".PayActivity">
+    <!-- total bayar -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="152dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/coffee_latte"
+            android:text="Total Pembayaran : "
+            android:textColor="@color/putih"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <RelativeLayout
+            android:layout_width="30dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/coffee_latte"
+            android:text="Rp. 20.000"
+            android:textColor="@color/putih"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+    <!-- header metode pembayaran -->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="152dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/coffee_latte"
+            android:text="Metode Pembayaran"
+            android:textColor="@color/putih"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+    <!-- metode pembayaran E Wallet -->
+    <RadioGroup
+        android:id="@+id/E_Wallet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/coffee_latte"
+            android:text="E Wallet"
+            android:textColor="@color/putih"
+            android:textSize="24sp" />
+
+
+        <RadioButton
+            android:id="@+id/gopay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/coffee_latte"
+            android:text="Gopay"
+            android:textColor="@color/putih"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/ovo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/coffee_latte"
+            android:text="Ovo"
+            android:textColor="@color/putih"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/dana"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/coffee_latte"
+            android:text="Dana"
+            android:textColor="@color/putih"
+            android:textSize="20sp" />
+    </RadioGroup>
+    <!-- metode pembayaran Tunai -->
+    <RadioGroup
+        android:id="@+id/Tunai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/E_Wallet">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/coffee_latte"
+            android:text="Tunai/Cash"
+            android:textColor="@color/putih"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/tunai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/coffee_latte"
+            android:text="Tunai"
+            android:textColor="@color/putih"
+            android:textSize="20sp" />
+    </RadioGroup>
+    <!-- tombol bayar -->
+    <Button
+        android:id="@+id/btn_bayar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/button_biasa"
+        android:backgroundTintMode="screen"
+        android:clickable="true"
+        android:text="Bayar"
+        android:textColor="@color/putih"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tunai" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

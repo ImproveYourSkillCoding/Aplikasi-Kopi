@@ -18,16 +18,18 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     public ItemViewHolder(@NonNull View itemView) {
         super(itemView);
+        //deklarasi variable menu
         txtNamaProduk = (TextView)itemView.findViewById(R.id.tv_judul);
         txtHargaProduk = (TextView)itemView.findViewById(R.id.tv_harga);
-        imgProduk = (ImageView)itemView.findViewById(R.id.img_item_photo);
-        cardView = (CardView)itemView.findViewById(R.id.card_view);
+        imgProduk = (ImageView)itemView.findViewById(R.id.item_photo);
+        cardView = (CardView)itemView.findViewById(R.id.card_view_kopi);
 
+        // deklarasi fitur keranjang
         txtNamaProduk_cart = (TextView)itemView.findViewById(R.id.tv_nama_cart);
         txtHargaProduk_cart = (TextView)itemView.findViewById(R.id.tv_harga_cart);
-        txtJumlahProduk_cart= (TextView)itemView.findViewById(R.id.jumlah_item);
-        imgProduk_cart = (ImageView)itemView.findViewById(R.id.img_item_photo_cart);
-        cardView_cart = (CardView)itemView.findViewById(R.id.card_view2);
+        txtJumlahProduk_cart= (TextView)itemView.findViewById(R.id.txt_total);
+        imgProduk_cart = (ImageView)itemView.findViewById(R.id.item_photo_cart);
+        cardView_cart = (CardView)itemView.findViewById(R.id.card_view_cart);
     }
 
 

@@ -1,5 +1,6 @@
 package com.belajarkodecoding.aplikasicoffee;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,7 @@ public class KeranjangActivity extends AppCompatActivity{
     DatabaseReference databaseReference;
     RecyclerView recview;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,11 +65,11 @@ public class KeranjangActivity extends AppCompatActivity{
                         .build();
 
         recyclerAdapter = new FirebaseRecyclerAdapter<Item_keranjang, ItemViewHolder>(options) {
+            @SuppressLint("SetTextI18n")
             @Override
             protected void onBindViewHolder(@NonNull ItemViewHolder holder, int position, @NonNull Item_keranjang model) {
               holder.txtNamaProduk_cart.setText(model.getNama());
               holder.txtHargaProduk_cart.setText("Rp."+model.getHarga());
-              holder.txtJumlahProduk_cart.setText(String.valueOf(model.getJumlah()));
               Glide.with(getBaseContext())
                       .load(model.getUrl())
                       .into(holder.imgProduk_cart);

@@ -3,7 +3,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_view_cart"
+    android:id="@+id/card_view_riwayat"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
@@ -20,12 +20,12 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/item_photo_cart"
+            android:id="@+id/img_item_photo"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:adjustViewBounds="true"
             android:cropToPadding="false"
-            tools:src="@color/colorAccent" />
+            tools:src="@drawable/dashboard" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -33,14 +33,14 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tv_nama_cart"
+                android:id="@+id/pembelian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/coffee_latte"
-                android:text="Kopi"
+                android:text="Pembelian 1"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -51,10 +51,10 @@
                 android:weightSum="7">
 
                 <TextView
-                    android:id="@+id/tv_harga_cart"
+                    android:id="@+id/total_harga"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginBottom="8dp"
                     android:fontFamily="@font/coffee_latte"
                     android:text="Rp. 20.000"

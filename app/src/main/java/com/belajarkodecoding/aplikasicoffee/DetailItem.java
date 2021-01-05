@@ -68,7 +68,8 @@ public class DetailItem extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activity_detail, container, false);
-        ImageView itemphoto = view.findViewById(R.id.item_photo);
+        // deklarasi variable detail
+        ImageView itemphoto = view.findViewById(R.id.item_photo_detail);
         TextView judulItem = view.findViewById(R.id.judul);
         TextView hargaItem = view.findViewById(R.id.harga);
 
