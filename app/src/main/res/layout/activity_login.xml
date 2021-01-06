@@ -7,6 +7,7 @@
     android:background="@drawable/gradiasi"
     tools:context=".LoginActivity">
 
+    <!-- input email dan password -->
     <RelativeLayout
         android:id="@+id/rl_input"
         android:layout_marginRight="70dp"
@@ -47,6 +48,7 @@
             android:paddingLeft="20dp" />
     </RelativeLayout>
 
+    <!-- tombol login -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_login"
         android:layout_marginRight="40dp"
@@ -56,6 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- judul -->
     <TextView
         android:layout_centerHorizontal="true"
         android:layout_above="@id/rl_input"

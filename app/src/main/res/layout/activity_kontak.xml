@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradiasi">
 
+    <!-- gambar penjual -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -14,6 +15,7 @@
         android:layout_marginTop="20dp"
         android:id="@+id/imageSeller"/>
 
+    <!-- nama penjual -->
     <TextView
         android:id="@+id/seller_nama"
         android:layout_width="wrap_content"
@@ -25,6 +27,7 @@
         android:fontFamily="@font/coffee_latte"
         android:textSize="30sp"/>
 
+    <!-- nomor penjual -->
     <TextView
         android:id="@+id/seller_number"
         android:layout_width="wrap_content"

@@ -8,7 +8,7 @@
     android:background="@drawable/gradiasi"
     tools:context=".SelamatDatangActivity">
 
-
+    <!-- gambar awal -->
     <ImageView
         android:contentDescription=""
         android:id="@+id/welcome1"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/dashboard"
         android:scaleType="fitXY"/>
-
+    <!-- sapaan -->
     <TextView
         android:id="@+id/welcome"
         android:layout_width="238dp"
@@ -35,6 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome1" />
 
+    <!-- sedikit deskripsi aplikasi -->
     <TextView
         android:id="@+id/intro"
         android:layout_width="367dp"
@@ -48,7 +49,7 @@
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome1" />
-
+    <!-- tombol masuk -->
     <Button
         android:id="@+id/masuk"
         android:layout_width="120dp"
@@ -66,7 +67,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/intro"
         app:layout_constraintVertical_bias="0.36" />
-
+    <!-- tombol daftar/regis -->
     <Button
         android:id="@+id/daftar"
         android:layout_width="120dp"

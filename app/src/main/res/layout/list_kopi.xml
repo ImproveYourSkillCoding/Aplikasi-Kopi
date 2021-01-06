@@ -12,11 +12,12 @@
     android:layout_marginBottom="4dp"
     card_view:cardCornerRadius="4dp">
 
+    <!-- list produk -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp">
-
+        <!-- gambar produk -->
         <ImageView
             android:cropToPadding="false"
             android:adjustViewBounds="true"
@@ -24,7 +25,7 @@
             android:layout_width="225px"
             android:layout_height="225px"
             tools:src="@color/colorAccent" />
-
+        <!-- nama produk -->
         <TextView
             android:id="@+id/tv_judul"
             android:layout_toRightOf="@id/item_photo"
@@ -37,7 +38,7 @@
             android:textSize="16sp"
             android:text="Ini adalah Text Nama"
             android:textStyle="bold" />
-
+        <!-- harga produk -->
         <TextView
             android:id="@+id/tv_harga"
             android:textStyle="bold"

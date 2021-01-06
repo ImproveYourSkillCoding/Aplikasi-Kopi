@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PayActivity"></activity>
+
         <activity
             android:name=".SelamatDatangActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -28,6 +28,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".KeranjangActivity" />
         <activity android:name=".editProfilActivity" />
+        <activity android:name=".PayActivity"/>
+        <activity android:name=".selesaiActivity"/>
     </application>
 
 </manifest>

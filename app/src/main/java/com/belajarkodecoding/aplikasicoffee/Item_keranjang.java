@@ -2,16 +2,25 @@ package com.belajarkodecoding.aplikasicoffee;
 
 public class Item_keranjang {
     String  nama, url;
-    int harga, jumlah;
+    int harga, jumlah,total;
 
     public Item_keranjang() {
     }
 
-    public Item_keranjang(int harga, int jumlah, String nama, String url) {
+    public Item_keranjang(int harga, int jumlah,int total, String nama, String url) {
         this.harga = harga;
         this.nama = nama;
         this.url = url;
         this.jumlah = jumlah;
+        this.total= total;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
 
     public int getHarga() {

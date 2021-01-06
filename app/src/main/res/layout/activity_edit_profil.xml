@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradiasi">
 
+    <!-- tombol kembali-->
     <ImageButton
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -25,6 +26,7 @@
         android:layout_marginLeft="15dp"
         android:id="@+id/txt_view_profil"/>
 
+    <!-- gambar user -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="140dp"
         android:layout_height="140dp"
@@ -34,6 +36,7 @@
         android:background="@drawable/ic_account_circle"
         android:id="@+id/edit_imageprofil"/>
 
+    <!-- memasukkan data user -->
     <RelativeLayout
         android:id="@+id/rl_input_edit"
         android:layout_marginTop="20dp"
@@ -99,6 +102,7 @@
 
     </RelativeLayout>
 
+    <!-- tombol save data -->
     <Button
         android:layout_width="115dp"
         android:layout_height="54dp"

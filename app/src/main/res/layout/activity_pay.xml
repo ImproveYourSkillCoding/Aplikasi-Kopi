@@ -110,15 +110,6 @@
             android:text="Dana"
             android:textColor="@color/putih"
             android:textSize="20sp" />
-    </RadioGroup>
-    <!-- metode pembayaran Tunai -->
-    <RadioGroup
-        android:id="@+id/Tunai"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/E_Wallet">
 
         <TextView
             android:layout_width="match_parent"
@@ -139,12 +130,16 @@
             android:textColor="@color/putih"
             android:textSize="20sp" />
     </RadioGroup>
+    <!-- metode pembayaran Tunai -->
+    \
+
+
+
     <!-- tombol bayar -->
     <Button
         android:id="@+id/btn_bayar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
         android:background="@drawable/button_biasa"
         android:backgroundTintMode="screen"
         android:clickable="true"
@@ -153,6 +148,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Tunai" />
+        app:layout_constraintTop_toBottomOf="@+id/E_Wallet" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

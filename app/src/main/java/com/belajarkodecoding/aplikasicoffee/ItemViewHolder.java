@@ -1,6 +1,7 @@
 package com.belajarkodecoding.aplikasicoffee;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,9 +13,13 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     public TextView txtNamaProduk,txtHargaProduk;
     public ImageView imgProduk;
     public CardView cardView;
-    public TextView txtNamaProduk_cart,txtHargaProduk_cart, txtJumlahProduk_cart;
+    public TextView txtNamaProduk_cart,txtHargaProduk_cart, txtJumlahProduk_cart, txtKategori;
     public ImageView imgProduk_cart;
     public CardView cardView_cart;
+    public Button btn_cancel;
+
+    public TextView txtTanggalBeli, txtTotalHarga;
+    public CardView cardView_riwayat;
 
     public ItemViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -27,9 +32,16 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         // deklarasi fitur keranjang
         txtNamaProduk_cart = (TextView)itemView.findViewById(R.id.tv_nama_cart);
         txtHargaProduk_cart = (TextView)itemView.findViewById(R.id.tv_harga_cart);
-        txtJumlahProduk_cart= (TextView)itemView.findViewById(R.id.txt_total);
+        txtJumlahProduk_cart= (TextView)itemView.findViewById(R.id.jumlah_kopi);
         imgProduk_cart = (ImageView)itemView.findViewById(R.id.item_photo_cart);
         cardView_cart = (CardView)itemView.findViewById(R.id.card_view_cart);
+        btn_cancel = (Button)itemView.findViewById(R.id.btn_cancel);
+
+        //deklarasi fitur riwayat
+        txtTanggalBeli = (TextView)itemView.findViewById(R.id.tanggalbeli);
+        txtTotalHarga = (TextView)itemView.findViewById(R.id.total_harga);
+        txtKategori = (TextView)itemView.findViewById(R.id.kategori);
+        cardView_riwayat = (CardView)itemView.findViewById(R.id.card_view_riwayat);
     }
 
 

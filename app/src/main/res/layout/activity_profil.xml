@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradiasi">
 
+    <!-- foto user -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -13,6 +14,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:id="@+id/imageProfil"/>
+    <!-- email user -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,6 +24,7 @@
         android:fontFamily="@font/coffee_latte"
         android:textSize="30sp"
         android:id="@+id/emailProfil"/>
+    <!-- nama user -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,6 +35,7 @@
         android:fontFamily="@font/coffee_latte"
         android:textSize="30sp"
         android:id="@+id/namaProfil"/>
+    <!-- nomor user -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,6 +46,7 @@
         android:fontFamily="@font/coffee_latte"
         android:textSize="30sp"
         android:id="@+id/nomorProfil"/>
+    <!-- alamat user -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,7 +57,7 @@
         android:fontFamily="@font/coffee_latte"
         android:textSize="30sp"
         android:id="@+id/alamatProfil"/>
-
+    <!-- note -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,7 +68,7 @@
         android:fontFamily="@font/coffee_latte"
         android:textSize="18sp"
         android:id="@+id/editProfil"/>
-
+    <!-- tombol edit -->
     <Button
         android:id="@+id/btn_edit"
         android:layout_width="115dp"
@@ -74,7 +79,7 @@
         android:background="@drawable/button_biasa"
         android:fontFamily="@font/coffee_latte"
         android:text="Edit Profil" />
-
+    <!-- tombol logout -->
     <Button
         android:layout_width="115dp"
         android:layout_height="54dp"
@@ -86,10 +91,4 @@
         android:background="@drawable/button_biasa"
         android:layout_toRightOf="@id/btn_edit"
         android:layout_below="@id/editProfil"/>
-
-
-        
-
-
-        
 </RelativeLayout>

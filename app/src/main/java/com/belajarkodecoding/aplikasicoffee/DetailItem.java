@@ -88,8 +88,10 @@ public class DetailItem extends Fragment {
             public void onClick(final View v) {
                 String jumlah_buah=Ebutton.getNumber();
                 int jumlah = Integer.parseInt(jumlah_buah);
+                int total = jumlah*harga;
+
                 database.getReference().child("user").child(user.getUid()).child("keranjang").push()
-                        .setValue(new Item_keranjang(harga,jumlah,nama,url)).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        .setValue(new Item_keranjang(harga,jumlah,total,nama,url)).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(getActivity().getBaseContext(),"Kopi sudah dimasukan kedalam keranjang", Toast.LENGTH_SHORT).show();
