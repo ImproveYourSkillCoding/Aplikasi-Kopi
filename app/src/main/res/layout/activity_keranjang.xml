@@ -27,7 +27,7 @@
            android:textColor="@color/putih"
            android:layout_marginTop="20dp"
            android:fontFamily="@font/coffee_latte"
-           android:text="Ini total pembayaran : "
+           android:text="Anda Belum Memesan Apapun! "
            android:layout_marginLeft="15dp"
            android:textSize="20sp"/>
 

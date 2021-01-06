@@ -56,14 +56,10 @@ public class KeranjangActivity extends AppCompatActivity{
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("user").child(user.getUid()).child("keranjang");
 
-        if (databaseReference.getDatabase()==null){
-            txt_total.setText("Maaf Anda Belum Memesan Apapun, Silahkan Pesan Terlebih Dahulu!");
-        } else {
             layoutManager = new LinearLayoutManager(getApplicationContext());
             recview.setLayoutManager(layoutManager);
 
             loadDataKeranjang();
-        }
 
         btn_pembayaran.setOnClickListener(new View.OnClickListener() {
             @Override

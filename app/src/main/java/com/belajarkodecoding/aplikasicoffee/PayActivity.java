@@ -3,6 +3,7 @@ package com.belajarkodecoding.aplikasicoffee;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -71,6 +72,7 @@ public class PayActivity extends AppCompatActivity {
 
         //Event listener value untuk database
         databaseKeranjang.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int total = 0;
@@ -100,6 +102,7 @@ public class PayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Membuat event jika sudah dikonfirmasi untuk dibayar
                 databaseTransaksi.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @SuppressLint("SimpleDateFormat")
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         //Mendapatkan data harga dari database
