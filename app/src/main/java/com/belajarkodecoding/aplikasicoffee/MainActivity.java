@@ -19,6 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+    //Deklarasi Variabel
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private BottomNavigationView nvDrawer;
@@ -31,15 +32,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //Menyambungkan variabel dengan activity
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         nvDrawer = findViewById(R.id.bot_nvView);
-
+        //Mengeset Navigasi ketika bottom navmenu ditekan
         nvDrawer.setOnNavigationItemSelectedListener(this);
-
+        //membuat menu menjadi di home sebagai awal
         nvDrawer.getMenu().getItem(0).setChecked(true);
+        //inisiasi fungsi display
         firstFragmentDisplay(R.id.bot_nvView);
 
 
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         firstFragmentDisplay(item.getItemId());
         return true;
     }
-
+//fungsi untuk mengganti flcontent
     private void firstFragmentDisplay(int itemId) {
 
         fragment = new homeActivity();
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
 
         }
-
+        //Menukar flcontent
         if (fragment != null) {
             transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.flContent, fragment);
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
 
-
+//Event ketika back button dipencet
     @Override
     public void onBackPressed() {
         if (fragment != new homeActivity()) {
@@ -94,11 +95,5 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             super.onBackPressed();
         }
     }
-    /**public void logout() {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(), SelamatDatangActivity.class));
-        finish();
-
-    }**/
    
 }

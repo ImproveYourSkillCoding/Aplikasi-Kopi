@@ -33,6 +33,7 @@ import java.util.stream.IntStream;
 
 public class KeranjangActivity extends AppCompatActivity{
 
+    //Deklarasi Variabel
     Button btn_pembayaran, btn_cancel;
     TextView txt_total, txt_jumlah;
     FirebaseRecyclerAdapter<Item_keranjang, ItemViewHolder> recyclerAdapter;
@@ -47,24 +48,25 @@ public class KeranjangActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_keranjang);
 
+        //Menggabungkan variabel dengan activity
         txt_total = findViewById(R.id.txt_total);
         btn_pembayaran = findViewById(R.id.btn_pembayaran);
         recview = findViewById(R.id.daftar_keranjang);
         txt_jumlah = findViewById(R.id.txt_jumlah);
+
+        //Mengambil status user dan alamat database
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("user").child(user.getUid()).child("keranjang");
 
-        if (databaseReference.getDatabase()==null){
-            txt_total.setText("Maaf Anda Belum Memesan Apapun, Silahkan Pesan Terlebih Dahulu!");
-        } else {
-            layoutManager = new LinearLayoutManager(getApplicationContext());
-            recview.setLayoutManager(layoutManager);
+        //Membuat Layout Manager
+        layoutManager = new LinearLayoutManager(getApplicationContext());
+        recview.setLayoutManager(layoutManager);
+        //Inisiasi fungsi loadDataKeranjang
+        loadDataKeranjang();
 
-            loadDataKeranjang();
-        }
-
+        //Set Event click listener
         btn_pembayaran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,12 +82,13 @@ public class KeranjangActivity extends AppCompatActivity{
     private void loadDataKeranjang()
     {
 
-
+        //Membuat opsi untuk item keranjang
         final FirebaseRecyclerOptions options =
                 new FirebaseRecyclerOptions.Builder<Item_keranjang>()
                         .setQuery(databaseReference,Item_keranjang.class)
                         .build();
 
+        //Membuat Adapter
         recyclerAdapter = new FirebaseRecyclerAdapter<Item_keranjang, ItemViewHolder>(options) {
             int total, totHarga;
 
@@ -93,6 +96,7 @@ public class KeranjangActivity extends AppCompatActivity{
             @SuppressLint("SetTextI18n")
             @Override
             protected void onBindViewHolder(@NonNull final ItemViewHolder holder, int position, @NonNull final Item_keranjang model) {
+              //Menyambungkan text database dengan txt view pada list cart
               holder.txtNamaProduk_cart.setText(model.getNama());
               holder.txtHargaProduk_cart.setText("Rp."+model.getHarga());
               holder.txtJumlahProduk_cart.setText(model.getJumlah()+" Buah");
@@ -100,7 +104,7 @@ public class KeranjangActivity extends AppCompatActivity{
                       .load(model.getUrl())
                       .into(holder.imgProduk_cart);
 
-
+                //Membuat event click listener
                 holder.btn_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -111,6 +115,7 @@ public class KeranjangActivity extends AppCompatActivity{
                                 for(DataSnapshot ss: snapshot.getChildren()){
                                     ss.getRef().removeValue();
                                 }
+
                             }
 
                             @Override
@@ -121,6 +126,7 @@ public class KeranjangActivity extends AppCompatActivity{
                     }
                 });
 
+                //Membuat value event listener
                 databaseReference.addValueEventListener(new ValueEventListener() {
                   @Override
                   public void onDataChange(@NonNull final DataSnapshot snapshot) {
@@ -128,7 +134,7 @@ public class KeranjangActivity extends AppCompatActivity{
                       totHarga = 0;
                       int barang = 0;
                       int totalBarang = 0;
-
+                        //Menghitung total harga dan barang
                       for(DataSnapshot ds:snapshot.getChildren()){
 
                           Item_keranjang item = ds.getValue(Item_keranjang.class);
@@ -138,6 +144,7 @@ public class KeranjangActivity extends AppCompatActivity{
                           barang = Integer.valueOf(item.getJumlah());
                           totalBarang = totalBarang + barang;
                       }
+                      //Mengeset textview
                       txt_total.setText("Total Yang Harus Dibayar = "+totHarga);
                       txt_jumlah.setText("Jumlah Kopi = "+totalBarang+" Gelas");
 
@@ -167,6 +174,7 @@ public class KeranjangActivity extends AppCompatActivity{
                 return new ItemViewHolder(view);
             }
         };
+        //Mengeset adapter untuk recycleview
         recyclerAdapter.notifyDataSetChanged();
         recyclerAdapter.startListening();
         recview.setAdapter(recyclerAdapter);

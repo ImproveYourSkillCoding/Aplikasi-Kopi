@@ -24,6 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class PayActivity extends AppCompatActivity {
+    //Inisiasi Variabel
     TextView textView;
     Button btn_bayar;
     String kategori = "";
@@ -34,14 +35,17 @@ public class PayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay);
+        //Menyambungkan variabel dengan activity
         textView = findViewById(R.id.textView);
         rg_virtual = findViewById(R.id.E_Wallet);
+        //Mengambil status user
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
+        //Mengambil alamat database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference databaseKeranjang = database.getReference("user").child(user.getUid()).child("keranjang");
         final DatabaseReference databaseTransaksi = database.getReference("user").child(user.getUid()).child("transaksi");
-
+    //If else dari radio group
         if (rg_virtual != null){
             rg_virtual.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
@@ -65,7 +69,7 @@ public class PayActivity extends AppCompatActivity {
         }
 
 
-
+        //Event listener value untuk database
         databaseKeranjang.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -73,10 +77,12 @@ public class PayActivity extends AppCompatActivity {
                 int totHarga = 0;
                 for(DataSnapshot ds:snapshot.getChildren()){
                 Item_keranjang item = ds.getValue(Item_keranjang.class);
+                  //menjumlah harga dari transaksi
                     total = Integer.valueOf(item.getTotal());
                     totHarga = totHarga + total;
 
                 }
+                //memunculkan hasil hitung jumlah ke textview
                 textView.setText(String.valueOf(totHarga));
 
             }
@@ -86,20 +92,23 @@ public class PayActivity extends AppCompatActivity {
 
             }
         });
-
+        //Menyambungkan variabel dengan activity
         btn_bayar = findViewById(R.id.btn_bayar);
+        //Event click listener jika button ditekan
         btn_bayar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Membuat event jika sudah dikonfirmasi untuk dibayar
                 databaseTransaksi.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        //Mendapatkan data harga dari database
                         int harga = Integer.parseInt(textView.getText().toString());
+                        //Mengambil data calender sesuai dengan waktu transaksi
                         calendar =  Calendar.getInstance();
-
-
                         simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
                         String date = simpleDateFormat.format(calendar.getTime());
+                        //Menambah data ke database
                         databaseTransaksi.push()
                                 .setValue(new transaksi(date,kategori,harga)).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -108,6 +117,7 @@ public class PayActivity extends AppCompatActivity {
 
                             }
                         });
+                        //Mendelete data dari keranjang
                         databaseKeranjang.removeValue();
                         Intent intent = new Intent(PayActivity.this, selesaiActivity.class );
                         startActivity(intent);
