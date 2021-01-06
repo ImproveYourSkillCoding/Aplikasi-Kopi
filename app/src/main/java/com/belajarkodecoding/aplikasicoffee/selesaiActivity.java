@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class selesaiActivity extends AppCompatActivity {
 
+    // deklarasi button home
     Button btn_home;
 
     @Override
@@ -16,7 +17,9 @@ public class selesaiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selesai);
 
+        // memanggil id button home
         btn_home = findViewById(R.id.ok);
+        // ketika button home terklik, maka akan pindah ke main activity
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

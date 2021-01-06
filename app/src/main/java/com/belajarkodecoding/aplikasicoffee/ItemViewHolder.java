@@ -10,6 +10,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    // deklarasi tipe data
     public TextView txtNamaProduk,txtHargaProduk;
     public ImageView imgProduk;
     public CardView cardView;
@@ -23,13 +24,13 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     public ItemViewHolder(@NonNull View itemView) {
         super(itemView);
-        //deklarasi variable menu
+        //deklarasi id produk
         txtNamaProduk = (TextView)itemView.findViewById(R.id.tv_judul);
         txtHargaProduk = (TextView)itemView.findViewById(R.id.tv_harga);
         imgProduk = (ImageView)itemView.findViewById(R.id.item_photo);
         cardView = (CardView)itemView.findViewById(R.id.card_view_kopi);
 
-        // deklarasi fitur keranjang
+        // deklarasi id fitur keranjang
         txtNamaProduk_cart = (TextView)itemView.findViewById(R.id.tv_nama_cart);
         txtHargaProduk_cart = (TextView)itemView.findViewById(R.id.tv_harga_cart);
         txtJumlahProduk_cart= (TextView)itemView.findViewById(R.id.jumlah_kopi);
@@ -37,7 +38,7 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         cardView_cart = (CardView)itemView.findViewById(R.id.card_view_cart);
         btn_cancel = (Button)itemView.findViewById(R.id.btn_cancel);
 
-        //deklarasi fitur riwayat
+        //deklarasi id fitur riwayat
         txtTanggalBeli = (TextView)itemView.findViewById(R.id.tanggalbeli);
         txtTotalHarga = (TextView)itemView.findViewById(R.id.total_harga);
         txtKategori = (TextView)itemView.findViewById(R.id.kategori);

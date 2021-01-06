@@ -1,13 +1,14 @@
 package com.belajarkodecoding.aplikasicoffee;
 
+// deklarasi tipe data
 public class transaksi {
  String date, metode;
  int harga;
 
  public transaksi() {
-
+    // public constructor
  }
-
+    // memasukkan data ke dalam transaksi
     public transaksi(String date, String metode, int harga){
         this.date = date;
         this.harga = harga;

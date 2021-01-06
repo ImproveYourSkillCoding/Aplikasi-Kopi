@@ -1,5 +1,6 @@
 package com.belajarkodecoding.aplikasicoffee;
 
+// deklarasi tipe data
 public class user {
     private String key;
     private String nama;
@@ -7,9 +8,10 @@ public class user {
     private String no_telp;
 
     public user(){
-
+    // public constructor
     }
 
+    // memasukkan data ke user
     public user(String nama, String alamat,String no_telp){
         this.nama = nama;
         this.alamat = alamat;

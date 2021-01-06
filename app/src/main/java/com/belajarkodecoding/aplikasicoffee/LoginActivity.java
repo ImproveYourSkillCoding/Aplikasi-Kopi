@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
+    // deklarasi tipe data dan autentikasi firebase
     private FirebaseAuth mAuth;
     private EditText etUsername, etPassword;
     FloatingActionButton fabLogin;
@@ -29,17 +30,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // deklarasi id dan juga memasukkan autentikasi
         mAuth = FirebaseAuth.getInstance();
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
         fabLogin = findViewById(R.id.fab_login);
 
+        // membuat event klik
         fabLogin.setOnClickListener(this);
     }
 
+    // event klik, ketika memasukkan email dan password
     @Override
     public void onClick(View view) {
 
+        // memanggil username dan password
         String username = etUsername.getText().toString();
         String password = etPassword.getText().toString();
 
@@ -60,7 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information\
+                                // jika login berhasil
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(LoginActivity.this, "Authentication success.", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -68,14 +73,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
                             } else {
-                                // If sign in fails, display a message to the user.
+                                // jika tidak berhasil
                                 Toast.makeText(LoginActivity.this, "Authentication failed."+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
 
         }
-
+    // mengambil status identitas user
     @Override
     public void onStart() {
         super.onStart();

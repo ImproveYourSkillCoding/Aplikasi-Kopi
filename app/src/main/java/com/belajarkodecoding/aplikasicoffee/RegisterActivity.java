@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
+    // deklarasi tipe data dan autentikasi firebase
     private FirebaseAuth mAuth;
     private EditText etEmail, etUsername, etPassword;
     FloatingActionButton fabRegister;
@@ -27,24 +28,29 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        // mengambil dan memasukkan autentikasi
         mAuth = FirebaseAuth.getInstance();
 
+        // deklarasi id untuk regis
         etEmail = findViewById(R.id.et_email);
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
         fabRegister = findViewById(R.id.fab_register);
 
+        // mengecek user dan langsung pindah ke main activity
         if(mAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
         }
 
+        // event klik register
         fabRegister.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
+
+        // memanggil username dan password
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
 
@@ -67,20 +73,21 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
+                                // jika regis berhasil, maka langsung pindah ke main activity
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(RegisterActivity.this, "User Created success.", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                 finish();
 
                             } else {
-                                // If sign in fails, display a message to the user.
+                                // jika regis gagal maka akan keluar notif
                                 Toast.makeText(RegisterActivity.this, "Authentication failed." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
         }
 
+        // event klik back
     @Override
     public void onBackPressed() {
         Intent goLogin = new Intent(RegisterActivity.this, SelamatDatangActivity.class);
@@ -88,10 +95,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         finish();
     }
 
+    // event start, mengecek user telah login/regis atau setidaknya tidak null
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
     }
 }

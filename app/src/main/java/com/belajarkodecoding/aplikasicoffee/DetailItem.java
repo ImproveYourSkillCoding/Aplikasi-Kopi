@@ -23,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class DetailItem extends Fragment {
 
+    // deklarasi tipe data
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -34,9 +36,10 @@ public class DetailItem extends Fragment {
     ElegantNumberButton Ebutton;
 
     public DetailItem() {
-
+        // public constructor
     }
 
+    // memasukkan data nama, harga, dan url ke dalam Detail Item
     public DetailItem(String nama, int harga, String url) {
         this.nama=nama;
         this.harga=harga;
@@ -73,14 +76,17 @@ public class DetailItem extends Fragment {
         TextView judulItem = view.findViewById(R.id.judul);
         TextView hargaItem = view.findViewById(R.id.harga);
 
+        // memanggil user
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         final FirebaseUser user = mAuth.getCurrentUser();
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
+        // memanggil data pada database
         judulItem.setText(nama);
         hargaItem.setText("Rp."+harga);
         Glide.with(getContext()).load(url).into(itemphoto);
 
+        // deklarasi id button dan ketika di klik akan memasukkan data ke dalam database yang nantinya akan dipaling ke keranjang
         Ebutton = view.findViewById(R.id.btn_jumlah);
         button = view.findViewById(R.id.tambah_keranjang);
         button.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +111,7 @@ public class DetailItem extends Fragment {
     }
 
 
-
+    // membuat event back
     public void onBackPressed(){
         AppCompatActivity activity=(AppCompatActivity)getContext();
         activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContent,

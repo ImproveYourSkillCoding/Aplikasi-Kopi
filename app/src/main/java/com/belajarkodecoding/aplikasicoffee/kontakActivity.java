@@ -22,7 +22,7 @@ import android.widget.TextView;
 public class kontakActivity extends Fragment implements View.OnClickListener {
 
     public kontakActivity() {
-        // Required empty public constructor
+        // public constructor
     }
 
 
@@ -31,7 +31,9 @@ public class kontakActivity extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.activity_kontak, container, false);
+        // memanggil id seller
         TextView nSeller = (TextView) root.findViewById(R.id.seller_number);
+        // membuat event klik pada nseller
         nSeller.setOnClickListener(this);
         return root;
     }
@@ -39,9 +41,9 @@ public class kontakActivity extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle("Hubungi Penjual");
     }
 
+    // ketika di klik, akan langsung pindah ke dial untuk menghubungi si penjual
     @Override
     public void onClick(View v){
         switch (v.getId()){

@@ -1,12 +1,15 @@
 package com.belajarkodecoding.aplikasicoffee;
 
+// deklarasi tipe data
 public class Item {
     String  nama, url;
     int harga;
 
     public Item() {
+        // public constructor
     }
 
+    // memasukkan data ke dalam Item
     public Item(int harga, String nama, String url) {
         this.harga = harga;
         this.nama = nama;

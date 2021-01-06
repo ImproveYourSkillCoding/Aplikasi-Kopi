@@ -12,20 +12,23 @@ public class SelamatDatangActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        // deklarasi button
         Button btnDaftar, btnMasuk;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selamat_datang);
 
+        // deklarasi id button
         btnDaftar = findViewById(R.id.daftar);
         btnMasuk = findViewById(R.id.masuk);
 
-
+        // membuat event klik
         btnDaftar.setOnClickListener(this);
         btnMasuk.setOnClickListener(this);
 
     }
 
+    // pada saat di klik akan berpindah activity sesuai dengan case nya
     @Override
     public void onClick(View view) {
             switch (view.getId()){
