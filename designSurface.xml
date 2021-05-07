@@ -13,10 +13,13 @@
         <entry key="..\:/Project/Academy/app/src/main/res/layout/activity_home.xml" value="0.253125" />
         <entry key="..\:/Project/Academy/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Project/Academy/app/src/main/res/layout/content_detail_course.xml" value="0.20425724637681159" />
-        <entry key="..\:/Project/Academy/app/src/main/res/layout/fragment_academy.xml" value="0.1" />
-        <entry key="..\:/Project/Academy/app/src/main/res/layout/fragment_bookmark.xml" value="0.1" />
-        <entry key="..\:/Project/Academy/app/src/main/res/layout/fragment_module_content.xml" value="0.1" />
-        <entry key="..\:/Project/Academy/app/src/main/res/layout/fragment_module_list.xml" value="0.1" />
+        <entry key="..\:/Project/Academy/app/src/main/res/layout/fragment_academy.xml" value="0.253125" />
+        <entry key="..\:/Project/Academy/app/src/main/res/layout/fragment_bookmark.xml" value="0.253125" />
+        <entry key="..\:/Project/Academy/app/src/main/res/layout/fragment_module_content.xml" value="0.253125" />
+        <entry key="..\:/Project/Academy/app/src/main/res/layout/fragment_module_list.xml" value="0.253125" />
+        <entry key="..\:/Project/Academy/app/src/main/res/layout/items_academy.xml" value="0.253125" />
+        <entry key="..\:/Project/Academy/app/src/main/res/layout/items_bookmark.xml" value="0.253125" />
+        <entry key="..\:/Project/Academy/app/src/main/res/layout/items_module_list.xml" value="0.253125" />
       </map>
     </option>
   </component>
