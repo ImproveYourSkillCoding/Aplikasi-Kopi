@@ -34,7 +34,7 @@
         <entry key="..\:/Project/Academy/app/src/main/res/layout/items_bookmark.xml" value="0.253125" />
         <entry key="..\:/Project/Academy/app/src/main/res/layout/items_module_list.xml" value="0.253125" />
         <entry key="..\:/Project/Academy/app/src/main/res/layout/items_module_list_custom.xml" value="0.2427536231884058" />
-        <entry key="..\:/Project/FilmandShows/app/src/main/res/layout/activity_detail_fat.xml" value="0.17489421720733428" />
+        <entry key="..\:/Project/FilmandShows/app/src/main/res/layout/activity_detail_fat.xml" value="0.17980072463768115" />
         <entry key="..\:/Project/FilmandShows/app/src/main/res/layout/activity_home.xml" value="0.253125" />
         <entry key="..\:/Project/FilmandShows/app/src/main/res/layout/activity_main.xml" value="0.12916666666666668" />
         <entry key="..\:/Project/FilmandShows/app/src/main/res/layout/activity_splash.xml" value="0.18478260869565216" />
@@ -48,8 +48,10 @@
         <entry key="..\:/Project/GenshinBio/app/src/main/res/layout/item_chara.xml" value="0.1" />
         <entry key="..\:/Project/GithubUser/app/src/main/res/layout/actvity_detail.xml" value="0.18885869565217392" />
         <entry key="..\:/Project/Hukumpedia/app/src/main/res/drawable/item_button.xml" value="0.2682291666666667" />
+        <entry key="..\:/Project/Hukumpedia/app/src/main/res/layout/activity_detail.xml" value="0.264" />
         <entry key="..\:/Project/Hukumpedia/app/src/main/res/layout/activity_home.xml" value="0.15172101449275363" />
         <entry key="..\:/Project/Hukumpedia/app/src/main/res/layout/activity_main.xml" value="0.253125" />
+        <entry key="..\:/Project/Hukumpedia/app/src/main/res/layout/content_detail.xml" value="0.14990942028985507" />
         <entry key="..\:/Project/Hukumpedia/app/src/main/res/layout/item_button.xml" value="0.253125" />
         <entry key="..\:/Project/Hukumpedia/app/src/main/res/layout/item_pasal.xml" value="0.264" />
       </map>
