@@ -1,8 +1,5 @@
 <application>
   <component name="GithubAccounts">
-    <account id="276491d0-df47-49c0-99bd-d147a0baf62d" name="arudijd">
-      <server useHttp="false" host="github.com" />
-    </account>
     <account id="9980fbb9-f640-4456-80b9-a8729ce1c2d0" name="Raychal">
       <server host="github.com" />
     </account>
