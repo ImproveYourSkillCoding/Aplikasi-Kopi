@@ -56,7 +56,8 @@
         <entry key="..\:/Project/Hukumpedia/app/src/main/res/layout/content_detail.xml" value="0.14990942028985507" />
         <entry key="..\:/Project/Hukumpedia/app/src/main/res/layout/item_button.xml" value="0.253125" />
         <entry key="..\:/Project/Hukumpedia/app/src/main/res/layout/item_pasal.xml" value="0.264" />
-        <entry key="..\:/Project/MovieDB/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Project/MovieDB/app/src/main/res/layout/activity_main.xml" value="0.19746376811594202" />
+        <entry key="..\:/Project/MovieDB/app/src/main/res/menu/menu_nav_bot.xml" value="0.253125" />
         <entry key="..\:/Project/MovieDB/core/src/main/res/layout/item_list_home.xml" value="0.253125" />
         <entry key="..\:/Users/Aldi Jatika/StudioProjects/Aplikasi-Kopi/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/Aldi Jatika/StudioProjects/Aplikasi-Kopi/app/src/main/res/menu/drawer_menu.xml" value="0.1" />
@@ -65,6 +66,7 @@
         <entry key="..\:/a165-android-expert-project-402-dynamic-feature/app/src/main/res/layout/activity_main.xml" value="0.12310030395136778" />
         <entry key="..\:/a165-android-expert-project-402-dynamic-feature/app/src/main/res/layout/content_main.xml" value="0.253125" />
         <entry key="..\:/a165-android-expert-project-402-dynamic-feature/app/src/main/res/layout/fragment_home.xml" value="0.12310030395136778" />
+        <entry key="..\:/a165-android-expert-project-402-dynamic-feature/app/src/main/res/menu/activity_main_drawer.xml" value="0.253125" />
         <entry key="..\:/a165-android-expert-project-402-dynamic-feature/core/src/main/res/layout/item_list_tourism.xml" value="0.19655797101449277" />
       </map>
     </option>
